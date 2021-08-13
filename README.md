@@ -11,7 +11,7 @@ python multicrit.py config.json
 
 Пример [файла конфигурации](example.json), его структура следующая:
 
-```json
+```txt
 {
   "criteria": {
     "c1": [cw1, [wa1c1, wa2c1, wa3c1]],
