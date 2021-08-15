@@ -41,7 +41,7 @@ check = [(sum(map(lambda z: z[0] * z[1],
                   zip(WaCi[j], [sum(C[0][j][i]) for i in alts_len_range])
                   )) - len(obj['alternatives'])) / (len(obj['alternatives']) - 1) / 1.12 for j in criteria_len_range]
 
-if not all([abs(independence) < 10**(-9) for independence in check]):
+if not all([abs(independence) < 10 ** (-9) for independence in check]):
     print(f'It seems to me that not all criteria index are independent: {check}.')
 
 table = tabulate.tabulate(
@@ -54,4 +54,5 @@ table = tabulate.tabulate(
 print(f'Here is the sorted results\n{table}')
 
 best_match = obj["alternatives"][result.index(max(result))]
-print(f'\n\tBest match for alternative is `{best_match}`')
+print(f'\n\tBest match for alternative is `{best_match}` in {len(obj["alternatives"])} alternatives' +
+      f'for {len(criteria)} criteria.')
